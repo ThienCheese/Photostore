@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             flowLayoutPanel1 = new FlowLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
+            pictureBox2 = new PictureBox();
             OpenBtt = new Button();
             PrevBtt = new Button();
             counter_rotate = new Button();
@@ -38,8 +40,11 @@
             CloseBtt = new Button();
             openFileDialog1 = new OpenFileDialog();
             pictureBox1 = new PictureBox();
+            pictureBox3 = new PictureBox();
             flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -54,23 +59,36 @@
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.BackColor = Color.PeachPuff;
+            flowLayoutPanel2.Controls.Add(pictureBox3);
             flowLayoutPanel2.Controls.Add(OpenBtt);
             flowLayoutPanel2.Controls.Add(PrevBtt);
             flowLayoutPanel2.Controls.Add(counter_rotate);
             flowLayoutPanel2.Controls.Add(clk_rotate);
             flowLayoutPanel2.Controls.Add(NextBtt);
             flowLayoutPanel2.Controls.Add(CloseBtt);
+            flowLayoutPanel2.Controls.Add(pictureBox2);
             flowLayoutPanel2.Dock = DockStyle.Top;
             flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(1082, 37);
             flowLayoutPanel2.TabIndex = 2;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Location = new Point(720, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(47, 34);
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
+            // 
             // OpenBtt
             // 
             OpenBtt.BackColor = Color.Salmon;
             OpenBtt.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            OpenBtt.Location = new Point(3, 3);
+            OpenBtt.Location = new Point(48, 3);
             OpenBtt.Name = "OpenBtt";
             OpenBtt.Size = new Size(101, 33);
             OpenBtt.TabIndex = 0;
@@ -82,7 +100,7 @@
             // 
             PrevBtt.BackColor = Color.Salmon;
             PrevBtt.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            PrevBtt.Location = new Point(110, 3);
+            PrevBtt.Location = new Point(155, 3);
             PrevBtt.Name = "PrevBtt";
             PrevBtt.Size = new Size(108, 34);
             PrevBtt.TabIndex = 2;
@@ -94,7 +112,7 @@
             // 
             counter_rotate.BackColor = Color.Salmon;
             counter_rotate.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            counter_rotate.Location = new Point(224, 3);
+            counter_rotate.Location = new Point(269, 3);
             counter_rotate.Name = "counter_rotate";
             counter_rotate.Size = new Size(113, 34);
             counter_rotate.TabIndex = 5;
@@ -106,7 +124,7 @@
             // 
             clk_rotate.BackColor = Color.Salmon;
             clk_rotate.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            clk_rotate.Location = new Point(343, 3);
+            clk_rotate.Location = new Point(388, 3);
             clk_rotate.Name = "clk_rotate";
             clk_rotate.Size = new Size(104, 34);
             clk_rotate.TabIndex = 4;
@@ -118,7 +136,7 @@
             // 
             NextBtt.BackColor = Color.Salmon;
             NextBtt.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            NextBtt.Location = new Point(453, 3);
+            NextBtt.Location = new Point(498, 3);
             NextBtt.Name = "NextBtt";
             NextBtt.Size = new Size(104, 34);
             NextBtt.TabIndex = 3;
@@ -130,7 +148,7 @@
             // 
             CloseBtt.BackColor = Color.Salmon;
             CloseBtt.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            CloseBtt.Location = new Point(563, 3);
+            CloseBtt.Location = new Point(608, 3);
             CloseBtt.Name = "CloseBtt";
             CloseBtt.Size = new Size(106, 33);
             CloseBtt.TabIndex = 1;
@@ -156,6 +174,17 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.Left;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Location = new Point(3, 6);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(39, 28);
+            pictureBox3.TabIndex = 7;
+            pictureBox3.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -169,7 +198,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Photostop";
             flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -184,5 +215,7 @@
         private PictureBox pictureBox1;
         private Button counter_rotate;
         private Button clk_rotate;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
     }
 }

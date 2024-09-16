@@ -19,7 +19,7 @@ namespace Photostore
             {
                 if (pictureBox1.Image == null)
                 {
-                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox1.Load(openFileDialog1.FileName);
 
                 }
@@ -68,9 +68,10 @@ namespace Photostore
         private void PrevBtt_Click(object sender, EventArgs e)
         {
             index--;
-            this.pictureBox1.Image = img[index];
             if (index < 0)
                 MessageBox.Show("Error: Unvalid Image");
+            this.pictureBox1.Image = img[index];
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
