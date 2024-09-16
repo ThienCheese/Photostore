@@ -31,20 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             flowLayoutPanel1 = new FlowLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
             OpenBtt = new Button();
             PrevBtt = new Button();
             counter_rotate = new Button();
             clk_rotate = new Button();
+            ZomoutBtt = new Button();
+            zominBtt = new Button();
             NextBtt = new Button();
             CloseBtt = new Button();
+            pictureBox2 = new PictureBox();
             openFileDialog1 = new OpenFileDialog();
             pictureBox1 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            button1 = new Button();
             flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -64,6 +67,9 @@
             flowLayoutPanel2.Controls.Add(PrevBtt);
             flowLayoutPanel2.Controls.Add(counter_rotate);
             flowLayoutPanel2.Controls.Add(clk_rotate);
+            flowLayoutPanel2.Controls.Add(ZomoutBtt);
+            flowLayoutPanel2.Controls.Add(button1);
+            flowLayoutPanel2.Controls.Add(zominBtt);
             flowLayoutPanel2.Controls.Add(NextBtt);
             flowLayoutPanel2.Controls.Add(CloseBtt);
             flowLayoutPanel2.Controls.Add(pictureBox2);
@@ -73,16 +79,16 @@
             flowLayoutPanel2.Size = new Size(1082, 37);
             flowLayoutPanel2.TabIndex = 2;
             // 
-            // pictureBox2
+            // pictureBox3
             // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox2.Location = new Point(720, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(47, 34);
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
+            pictureBox3.Anchor = AnchorStyles.Left;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Location = new Point(3, 6);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(39, 28);
+            pictureBox3.TabIndex = 7;
+            pictureBox3.TabStop = false;
             // 
             // OpenBtt
             // 
@@ -132,11 +138,35 @@
             clk_rotate.UseVisualStyleBackColor = false;
             clk_rotate.Click += clk_rotate_Click;
             // 
+            // ZomoutBtt
+            // 
+            ZomoutBtt.BackColor = Color.Salmon;
+            ZomoutBtt.Font = new Font("Papyrus", 15F, FontStyle.Italic);
+            ZomoutBtt.Location = new Point(498, 3);
+            ZomoutBtt.Name = "ZomoutBtt";
+            ZomoutBtt.Size = new Size(45, 34);
+            ZomoutBtt.TabIndex = 9;
+            ZomoutBtt.Text = "-";
+            ZomoutBtt.UseVisualStyleBackColor = false;
+            ZomoutBtt.Click += ZomoutBtt_Click;
+            // 
+            // zominBtt
+            // 
+            zominBtt.BackColor = Color.Salmon;
+            zominBtt.Font = new Font("Papyrus", 15F, FontStyle.Italic);
+            zominBtt.Location = new Point(661, 3);
+            zominBtt.Name = "zominBtt";
+            zominBtt.Size = new Size(46, 34);
+            zominBtt.TabIndex = 8;
+            zominBtt.Text = "+";
+            zominBtt.UseVisualStyleBackColor = false;
+            zominBtt.Click += zominBtt_Click;
+            // 
             // NextBtt
             // 
             NextBtt.BackColor = Color.Salmon;
             NextBtt.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            NextBtt.Location = new Point(498, 3);
+            NextBtt.Location = new Point(713, 3);
             NextBtt.Name = "NextBtt";
             NextBtt.Size = new Size(104, 34);
             NextBtt.TabIndex = 3;
@@ -148,13 +178,24 @@
             // 
             CloseBtt.BackColor = Color.Salmon;
             CloseBtt.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            CloseBtt.Location = new Point(608, 3);
+            CloseBtt.Location = new Point(823, 3);
             CloseBtt.Name = "CloseBtt";
             CloseBtt.Size = new Size(106, 33);
             CloseBtt.TabIndex = 1;
             CloseBtt.Text = "Close";
             CloseBtt.UseVisualStyleBackColor = false;
             CloseBtt.Click += CloseBtt_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Location = new Point(935, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(47, 34);
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
             // 
             // openFileDialog1
             // 
@@ -170,20 +211,22 @@
             pictureBox1.Location = new Point(0, 37);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1082, 566);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // pictureBox3
+            // button1
             // 
-            pictureBox3.Anchor = AnchorStyles.Left;
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(3, 6);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(39, 28);
-            pictureBox3.TabIndex = 7;
-            pictureBox3.TabStop = false;
+            button1.BackColor = Color.Salmon;
+            button1.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
+            button1.Location = new Point(549, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(106, 33);
+            button1.TabIndex = 10;
+            button1.Text = "Reset";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
@@ -198,9 +241,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Photostop";
             flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -217,5 +260,8 @@
         private Button clk_rotate;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private Button ZomoutBtt;
+        private Button zominBtt;
+        private Button button1;
     }
 }

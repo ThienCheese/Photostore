@@ -5,9 +5,12 @@ namespace Photostore
 {
     public partial class Form1 : Form
     {
+        Image originalImage;
         public Form1()
         {
             InitializeComponent();
+            
+
         }
         Image[] img = new Image[10];
         int i = 0;
@@ -21,6 +24,7 @@ namespace Photostore
                 {
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox1.Load(openFileDialog1.FileName);
+                    originalImage = pictureBox1.Image;
 
                 }
 
@@ -41,6 +45,7 @@ namespace Photostore
 
                 }
             }
+            
         }
         private void ClearPic()
         {
@@ -58,6 +63,7 @@ namespace Photostore
             this.pictureBox1.Image = img[index];
             if (index >= i)
                 MessageBox.Show("Error: Unvalid Image");
+            originalImage = pictureBox1.Image;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -71,7 +77,8 @@ namespace Photostore
             if (index < 0)
                 MessageBox.Show("Error: Unvalid Image");
             this.pictureBox1.Image = img[index];
-           
+            originalImage = pictureBox1.Image;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -87,6 +94,43 @@ namespace Photostore
             Image flip = pictureBox1.Image;
             flip.RotateFlip(RotateFlipType.RotateNoneFlipX);
             pictureBox1.Image = flip;
+        }
+        double zoomFactor = 1.0f;
+
+        private void ZoomImage()
+        {
+            if (pictureBox1.Image != null)
+            {
+                int newWidth = (int)(originalImage.Width * zoomFactor);
+                int newHeight = (int)(originalImage.Height * zoomFactor);
+                Bitmap zoomedImage = new Bitmap(pictureBox1.Image, newWidth, newHeight);
+                pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+                pictureBox1.Image = zoomedImage;
+                
+
+            }
+            else MessageBox.Show("No Image to Zoom");
+        }
+        private void zominBtt_Click(object sender, EventArgs e)
+        {
+            zoomFactor += 0.1f;
+            ZoomImage();
+        }
+
+        private void ZomoutBtt_Click(object sender, EventArgs e)
+        {
+            if (zoomFactor > 0.1f)
+            {
+                zoomFactor -= 0.1f;
+                ZoomImage();
+            }
+            else MessageBox.Show("You zoomed too far !_!");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            zoomFactor = 1.0f;
+            ZoomImage();
         }
     }
 }
