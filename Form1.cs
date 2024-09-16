@@ -38,8 +38,7 @@ namespace Photostore
                     pb.Image = loadedImage;
                     flowLayoutPanel1.Controls.Add(pb);
                     i++;
-                    if (i == 10)
-                        i = 0;
+                
                 }
             }
         }
