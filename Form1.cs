@@ -38,7 +38,7 @@ namespace Photostore
                     pb.Image = loadedImage;
                     flowLayoutPanel1.Controls.Add(pb);
                     i++;
-                
+
                 }
             }
         }
@@ -69,8 +69,23 @@ namespace Photostore
         {
             index--;
             this.pictureBox1.Image = img[index];
-            if (index < 0 )
+            if (index < 0)
                 MessageBox.Show("Error: Unvalid Image");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Image flip = pictureBox1.Image;
+            flip.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            pictureBox1.Image = flip;
+
+        }
+
+        private void clk_rotate_Click(object sender, EventArgs e)
+        {
+            Image flip = pictureBox1.Image;
+            flip.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            pictureBox1.Image = flip;
         }
     }
 }

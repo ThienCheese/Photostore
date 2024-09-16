@@ -32,6 +32,8 @@
             flowLayoutPanel2 = new FlowLayoutPanel();
             OpenBtt = new Button();
             PrevBtt = new Button();
+            counter_rotate = new Button();
+            clk_rotate = new Button();
             NextBtt = new Button();
             CloseBtt = new Button();
             openFileDialog1 = new OpenFileDialog();
@@ -52,6 +54,8 @@
             // 
             flowLayoutPanel2.Controls.Add(OpenBtt);
             flowLayoutPanel2.Controls.Add(PrevBtt);
+            flowLayoutPanel2.Controls.Add(counter_rotate);
+            flowLayoutPanel2.Controls.Add(clk_rotate);
             flowLayoutPanel2.Controls.Add(NextBtt);
             flowLayoutPanel2.Controls.Add(CloseBtt);
             flowLayoutPanel2.Dock = DockStyle.Top;
@@ -80,9 +84,29 @@
             PrevBtt.UseVisualStyleBackColor = true;
             PrevBtt.Click += PrevBtt_Click;
             // 
+            // counter_rotate
+            // 
+            counter_rotate.Location = new Point(224, 3);
+            counter_rotate.Name = "counter_rotate";
+            counter_rotate.Size = new Size(113, 34);
+            counter_rotate.TabIndex = 5;
+            counter_rotate.Text = "Rotate";
+            counter_rotate.UseVisualStyleBackColor = true;
+            counter_rotate.Click += button2_Click;
+            // 
+            // clk_rotate
+            // 
+            clk_rotate.Location = new Point(343, 3);
+            clk_rotate.Name = "clk_rotate";
+            clk_rotate.Size = new Size(104, 34);
+            clk_rotate.TabIndex = 4;
+            clk_rotate.Text = "Flip ";
+            clk_rotate.UseVisualStyleBackColor = true;
+            clk_rotate.Click += clk_rotate_Click;
+            // 
             // NextBtt
             // 
-            NextBtt.Location = new Point(224, 3);
+            NextBtt.Location = new Point(453, 3);
             NextBtt.Name = "NextBtt";
             NextBtt.Size = new Size(104, 34);
             NextBtt.TabIndex = 3;
@@ -92,7 +116,7 @@
             // 
             // CloseBtt
             // 
-            CloseBtt.Location = new Point(334, 3);
+            CloseBtt.Location = new Point(563, 3);
             CloseBtt.Name = "CloseBtt";
             CloseBtt.Size = new Size(106, 33);
             CloseBtt.TabIndex = 1;
@@ -143,5 +167,7 @@
         private Button NextBtt;
         private OpenFileDialog openFileDialog1;
         private PictureBox pictureBox1;
+        private Button counter_rotate;
+        private Button clk_rotate;
     }
 }
