@@ -37,13 +37,13 @@
             counter_rotate = new Button();
             clk_rotate = new Button();
             ZomoutBtt = new Button();
+            button1 = new Button();
             zominBtt = new Button();
             NextBtt = new Button();
             CloseBtt = new Button();
             pictureBox2 = new PictureBox();
             openFileDialog1 = new OpenFileDialog();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -150,6 +150,18 @@
             ZomoutBtt.UseVisualStyleBackColor = false;
             ZomoutBtt.Click += ZomoutBtt_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Salmon;
+            button1.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
+            button1.Location = new Point(549, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(106, 33);
+            button1.TabIndex = 10;
+            button1.Text = "Reset";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // zominBtt
             // 
             zominBtt.BackColor = Color.Salmon;
@@ -173,6 +185,7 @@
             NextBtt.Text = "Next";
             NextBtt.UseVisualStyleBackColor = false;
             NextBtt.Click += NextBtt_Click;
+            NextBtt.KeyPress += NextBtt_KeyPress;
             // 
             // CloseBtt
             // 
@@ -216,18 +229,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Salmon;
-            button1.Font = new Font("Papyrus", 10.8F, FontStyle.Italic);
-            button1.Location = new Point(549, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 33);
-            button1.TabIndex = 10;
-            button1.Text = "Reset";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -240,6 +241,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Photostop";
+            Load += Form1_Load;
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

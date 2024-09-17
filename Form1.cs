@@ -9,7 +9,7 @@ namespace Photostore
         public Form1()
         {
             InitializeComponent();
-            
+
 
         }
         Image[] img = new Image[10];
@@ -22,7 +22,7 @@ namespace Photostore
             {
                 if (pictureBox1.Image == null)
                 {
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
                     pictureBox1.Load(openFileDialog1.FileName);
                     originalImage = pictureBox1.Image;
 
@@ -45,7 +45,7 @@ namespace Photostore
 
                 }
             }
-            
+
         }
         private void ClearPic()
         {
@@ -106,7 +106,7 @@ namespace Photostore
                 Bitmap zoomedImage = new Bitmap(pictureBox1.Image, newWidth, newHeight);
                 pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
                 pictureBox1.Image = zoomedImage;
-                
+
 
             }
             else MessageBox.Show("No Image to Zoom");
@@ -131,6 +131,16 @@ namespace Photostore
         {
             zoomFactor = 1.0f;
             ZoomImage();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NextBtt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
     }
 }
